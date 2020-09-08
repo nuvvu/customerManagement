@@ -1,6 +1,5 @@
 <template>
   <div class="login">
-    <img src="../assets/logo-black.png" class="login__logo" />
     <form class="login__form md-layout" @keyup.enter="login">
       <md-card class="md-layout-item md-size-100">
         <md-card-header class="login__header">
