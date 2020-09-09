@@ -11,6 +11,7 @@
         <md-card-content v-if="this.fleet" class="md-layout-item">
           <Input text="true" label="Średnica" v-model="car.srednica" />
           <Input text="true" label="Grubość ścianki" v-model="car.scianka" />
+          <Input text="true" label="Od kogo" v-model="car.kogo" />
           <Input text="true" label="Ilość" v-model="car.ilosc" />
           <md-button class="md-raised md-primary" @click="addCar">Dodaj</md-button>
         </md-card-content>
@@ -93,6 +94,7 @@ export default {
     defaultCar: {
       srednica: "",
       scianka: "",
+      kogo: "",
       ilosc: ""
     },
 

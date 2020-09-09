@@ -2,6 +2,7 @@
   <md-table-row>
     <md-table-cell>{{srednica}}</md-table-cell>
     <md-table-cell>{{scianka}}</md-table-cell>
+    <md-table-cell>{{kogo}}</md-table-cell>
     <md-table-cell>{{ilosc}}</md-table-cell>
 
     <md-table-cell>
@@ -23,6 +24,7 @@ export default {
   props: {
     srednica: "",
     scianka: "",
+    kogo: "",
     ilosc: "",
   },
 
