@@ -11,7 +11,7 @@
         v-if="this.empty"
         class="empty"
         md-icon="add"
-        md-label="Nie dodano żadneych rur"
+        md-label="Nie dodano żadnych rur"
         md-description="Kliknij, aby dodać rury"
         @click.native="$handleModalOpen"
       />
@@ -32,6 +32,7 @@
       <md-table-row class="table--row">
         <md-table-head>Średnica</md-table-head>
         <md-table-head>Grubość ścianki</md-table-head>
+        <md-table-head>Od kogo</md-table-head>
         <md-table-head>Ilość</md-table-head>
         <md-table-head>Usuń</md-table-head>
         <md-table-head>Edytuj</md-table-head>
@@ -44,6 +45,7 @@
         :index="index"
         :srednica="car.srednica"
         :scianka="car.scianka"
+        :kogo="car.kogo"
         :ilosc="car.ilosc"
         @deleteCar="deleteCar(car)"
         @editCar="editCar(car)"
@@ -118,6 +120,7 @@ export default {
         .set({
           srednica: car.srednica,
           scianka: car.scianka,
+          kogo: car.kogo,
           ilosc: car.ilosc,
         })
         .then(this.handleModalClose);
@@ -160,7 +163,7 @@ export default {
 
             // object.formattedPT = this.$formatDate(object.pt);
 
-            object.car = `${object.srednica} ${object.scianka} ${object.ilosc}`;
+            object.car = `${object.srednica} ${object.scianka} ${object.kogo} ${object.ilosc}`;
             newCars.push(object);
           });
         })
