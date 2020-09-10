@@ -11,8 +11,8 @@
         v-if="this.empty"
         class="empty"
         md-icon="add"
-        md-label="Nie dodano żadnego wypożyczenia"
-        md-description="Kliknij, aby dodać wypożyczenie"
+        md-label="Nie dodano żadnej studni"
+        md-description="Kliknij, aby dodać studnie"
         @click.native="$handleModalOpen"
       />
     </transition>

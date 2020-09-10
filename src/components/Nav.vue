@@ -28,9 +28,9 @@
 
     <md-bottom-bar class="nav-mobile">
       <md-bottom-bar-item @click.native="handleModalOpen" md-label="Dodaj" md-icon="add"></md-bottom-bar-item>
-      <md-bottom-bar-item to="/Flota" md-label="Flota" md-icon="directions_car"></md-bottom-bar-item>
-      <md-bottom-bar-item to="/Wypozyczenia" md-label="Wypozyczenia" md-icon="how_to_reg"></md-bottom-bar-item>
-      <md-bottom-bar-item to="/Rezerwacje" md-label="Rezerwacje" md-icon="assignment"></md-bottom-bar-item>
+      <md-bottom-bar-item to="/Flota" md-label="Magazyn" md-icon="directions_car"></md-bottom-bar-item>
+      <md-bottom-bar-item to="/Wypozyczenia" md-label="Pewniaki" md-icon="how_to_reg"></md-bottom-bar-item>
+      <md-bottom-bar-item to="/Rozmowy" md-label="Rozmowy" md-icon="assignment"></md-bottom-bar-item>
     </md-bottom-bar>
   </div>
 </template>
