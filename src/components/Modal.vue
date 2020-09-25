@@ -190,6 +190,7 @@ export default {
   height: 100vh;
   background-color: rgba($color: #000000, $alpha: 0.25);
   font-size: 3px !important;
+  overflow: auto;
   .outerWrapper {
     position: absolute;
     z-index: 999;
@@ -201,15 +202,19 @@ export default {
   }
 }
 .form {
-  position: absolute;
   z-index: 9999;
-  top: 50%;
+  position: absolute;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100% !important;
-
+  height: 80vh;
   @media screen and (min-width: 768px) {
     width: 40% !important;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 .form__content {
