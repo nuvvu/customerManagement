@@ -9,9 +9,14 @@
         </md-card-header>
 
         <md-card-content v-if="this.fleet" class="md-layout-item">
-          <Input text="true" label="Średnica" v-model="car.srednica" />
+          <md-autocomplete v-model="car.srednica" :md-options="srednica">
+            <label>Średnica Ø (Wymagane)</label>
+          </md-autocomplete>
           <Input text="true" label="Grubość ścianki" v-model="car.scianka" />
           <Input text="true" label="Od kogo" v-model="car.kogo" />
+          <md-autocomplete v-model="car.rodzaj" :md-options="rodzaj">
+            <label>Rodzaj</label>
+          </md-autocomplete>
           <Input text="true" label="Ilość" v-model="car.ilosc" />
           <md-button class="md-raised md-primary" @click="addCar">Dodaj</md-button>
         </md-card-content>
@@ -83,6 +88,7 @@ export default {
 
       zaplacono: ["Tak", "Nie"],
       srednica: ["125", "140", "160", "200", "225"],
+      rodzaj: ["Rura pełna", "Filtr"],
 
       samochody: []
     };
@@ -95,6 +101,7 @@ export default {
       srednica: "",
       scianka: "",
       kogo: "",
+      rodzaj: "",
       ilosc: ""
     },
 

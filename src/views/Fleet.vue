@@ -20,8 +20,7 @@
     <md-table v-if="this.empty === false" md-card class="table">
       <md-table-toolbar class="table__header">
         <h1 class="md-title table__title">
-          Rodzajów rur:
-          {{cars.length}}
+          Magazyn:
         </h1>
 
         <md-field md-clearable class="table__search md-toolbar-section-end">
@@ -33,6 +32,7 @@
         <md-table-head>Średnica</md-table-head>
         <md-table-head>Grubość ścianki</md-table-head>
         <md-table-head>Od kogo</md-table-head>
+        <md-table-head>Rodzaj</md-table-head>
         <md-table-head>Ilość</md-table-head>
         <md-table-head>Usuń</md-table-head>
         <md-table-head>Edytuj</md-table-head>
@@ -46,6 +46,7 @@
         :srednica="car.srednica"
         :scianka="car.scianka"
         :kogo="car.kogo"
+        :rodzaj="car.rodzaj"
         :ilosc="car.ilosc"
         @deleteCar="deleteCar(car)"
         @editCar="editCar(car)"
@@ -121,6 +122,7 @@ export default {
           srednica: car.srednica,
           scianka: car.scianka,
           kogo: car.kogo,
+          rodzaj: car.rodzaj,
           ilosc: car.ilosc,
         })
         .then(this.handleModalClose);
