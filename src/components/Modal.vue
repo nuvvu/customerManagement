@@ -9,11 +9,16 @@
         </md-card-header>
 
         <md-card-content v-if="this.fleet" class="md-layout-item">
+          <md-autocomplete v-model="car.typ" :md-options="typ">
+            <label>Typ</label>
+          </md-autocomplete>
           <md-autocomplete v-model="car.srednica" :md-options="srednica">
             <label>Średnica Ø (Wymagane)</label>
           </md-autocomplete>
           <Input text="true" label="Grubość ścianki" v-model="car.scianka" />
-          <Input text="true" label="Od kogo" v-model="car.kogo" />
+          <md-autocomplete v-model="car.kogo" :md-options="kogo">
+            <label>Od kogo</label>
+          </md-autocomplete>
           <md-autocomplete v-model="car.rodzaj" :md-options="rodzaj">
             <label>Rodzaj</label>
           </md-autocomplete>
@@ -89,6 +94,8 @@ export default {
       zaplacono: ["Tak", "Nie"],
       srednica: ["125", "140", "160", "200", "225"],
       rodzaj: ["Rura pełna", "Filtr"],
+      typ: ["Rury", "Chemia Studzienna", "Wiertła"],
+      kogo: ["Standard", "Waszczyk", "BDC", "Hekobentonity"],
 
       samochody: []
     };
@@ -98,6 +105,7 @@ export default {
   },
   props: {
     defaultCar: {
+      typ: "",
       srednica: "",
       scianka: "",
       kogo: "",

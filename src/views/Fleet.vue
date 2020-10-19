@@ -22,13 +22,16 @@
         <h1 class="md-title table__title">
           Magazyn:
         </h1>
-
+        <h2 class="md-title table__title">
+          Wyszukaj po nazwie typu
+        </h2>
         <md-field md-clearable class="table__search md-toolbar-section-end">
           <md-input placeholder="Wyszukaj..." v-model="search" @input="searchOnTable" />
         </md-field>
       </md-table-toolbar>
 
       <md-table-row class="table--row">
+        <md-table-head>Typ</md-table-head>
         <md-table-head>Średnica</md-table-head>
         <md-table-head>Grubość ścianki</md-table-head>
         <md-table-head>Od kogo</md-table-head>
@@ -43,6 +46,7 @@
         :key="index"
         v-for="(car, index) in cars"
         :index="index"
+        :typ="car.typ"
         :srednica="car.srednica"
         :scianka="car.scianka"
         :kogo="car.kogo"
@@ -96,7 +100,7 @@ export default {
       search: null,
       searched: [],
       flag: false,
-      sort: "ilosc",
+      sort: "typ",
       sortOrder: "asc"
     };
   },
@@ -119,6 +123,7 @@ export default {
         .collection("Samochody")
         .doc(`${car.srednica}_${car.scianka}_${car.ilosc}`)
         .set({
+          typ: car.typ,
           srednica: car.srednica,
           scianka: car.scianka,
           kogo: car.kogo,
@@ -165,7 +170,7 @@ export default {
 
             // object.formattedPT = this.$formatDate(object.pt);
 
-            object.car = `${object.srednica} ${object.scianka} ${object.kogo} ${object.ilosc}`;
+            object.car = `${object.srednica} ${object.scianka} ${object.kogo} ${object.ilosc} ${object.typ}`;
             newCars.push(object);
           });
         })

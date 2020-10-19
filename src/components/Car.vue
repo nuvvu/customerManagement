@@ -1,5 +1,6 @@
 <template>
   <md-table-row>
+    <md-table-cell>{{typ}}</md-table-cell>
     <md-table-cell>{{srednica}}</md-table-cell>
     <md-table-cell>{{scianka}}</md-table-cell>
     <md-table-cell>{{kogo}}</md-table-cell>
@@ -23,6 +24,7 @@
 export default {
   name: "Car",
   props: {
+    typ: "",
     srednica: "",
     scianka: "",
     kogo: "",
